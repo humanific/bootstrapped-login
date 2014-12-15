@@ -1,0 +1,15 @@
+#login_modal .btn{width: 100%}
+.loginajax{text-align:center;}
+.fullwidth{width:100%; height:auto;}
+#contest{text-align:center;}
+.btn.btn-fb {
+  border:1px solid #1c3062;
+  background:#4c66a4 url('fb.png')  10px  5px   no-repeat;
+  color:#fff;
+  padding-left: 40px
+}
+
+@media (min-width: 767px) {
+#login_modal .modal-dialog{width:400px;}
+#login_modal .modal-content{padding: 30px}
+}

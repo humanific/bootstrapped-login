@@ -1,4 +1,4 @@
-# [Bootstrapped Login Wordpress Plugin(http://bootstrapped.humanific.com)
+# [Bootstrapped Login Wordpress Plugin](http://bootstrapped.humanific.com)
 
 Bootstrap Login plugin for wordpress
 
