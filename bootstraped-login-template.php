@@ -4,7 +4,7 @@
       <div class="modal-body ">
           <div class="loginajax">
           <form id="lostpasswordform"  method="post"> 
-            <h2><?php _e('Forgotten password','bootstrapped-login');?></h2>
+            <h4><?php _e('Forgotten password','bootstrapped-login');?></h4>
           <input type="hidden" name="action" value="tg_pwd_reset" />
           <?php wp_nonce_field( 'ajax-pwd-nonce', 'security-pwd' ); ?>       
           
@@ -29,7 +29,7 @@
             <a class="btn btn-default btn-fb fb_login btn-lg" href="#"><?php _e('Register with facebook','bootstrapped-login');?></a>
             <p><?php _e('or','bootstrapped-login')?></p>
             <?php else: ?>
-            <h3>Register</h3>
+            <h4><?php _e('Register','bootstrapped-login');?></h4>
             <?php endif ?>
 
             <div class="form-group">
@@ -69,7 +69,7 @@
             <a class="btn btn-default btn-fb fb_login btn-lg" href="#"><?php _e('Login with facebook','bootstrapped-login');?></a>
             <p><?php _e('or','bootstrapped-login')?></p>
             <?php else: ?>
-            <h3>Login</h3>
+            <h4><?php _e('Login','bootstrapped-login');?></h4>
             <?php endif ?>
               
           <div class="form-group">

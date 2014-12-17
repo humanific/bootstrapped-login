@@ -1,0 +1,235 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bootstraped-login\n"
+"POT-Creation-Date: 2014-12-17 10:15+0700\n"
+"PO-Revision-Date: 2014-12-17 16:52+0700\n"
+"Last-Translator: François Richir <francoisrichir@gmail.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../bootstraped-login-template.php:7 ../bootstraped-login-template.php:98
+msgid "Forgotten password"
+msgstr "Mot de passe oublié"
+
+#: ../bootstraped-login-template.php:15 ../bootstraped-login-template.php:43
+msgid "Email"
+msgstr "E-mail"
+
+#: ../bootstraped-login-template.php:21
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
+
+#: ../bootstraped-login-template.php:29
+msgid "Register with facebook"
+msgstr "S'enregistrer avec facebook"
+
+#: ../bootstraped-login-template.php:30 ../bootstraped-login-template.php:70
+msgid "or"
+msgstr "ou"
+
+#: ../bootstraped-login-template.php:38
+msgid "Username"
+msgstr "utilisateur"
+
+#: ../bootstraped-login-template.php:49 ../bootstraped-login-template.php:83
+#: ../index.php:277 ../index.php:353
+msgid "Password"
+msgstr "mot de passe"
+
+#: ../bootstraped-login-template.php:54 ../index.php:283 ../index.php:359
+msgid "Repeat password"
+msgstr "Répétez le mot de passe"
+
+#: ../bootstraped-login-template.php:61
+msgid "Sign up"
+msgstr "S'enregistrer"
+
+#: ../bootstraped-login-template.php:69
+msgid "Login with facebook"
+msgstr "Se connecter avec facebook"
+
+#: ../bootstraped-login-template.php:78
+msgid "Email or username"
+msgstr "Email ou nom d'utilisateur"
+
+#: ../bootstraped-login-template.php:89 ../index.php:436
+msgid "Log in"
+msgstr "Se connecter"
+
+#: ../bootstraped-login-template.php:100
+msgid "If you don't have an account yet, please"
+msgstr "Si vous n'avez pas encore de compte vous pouvez vous "
+
+#: ../bootstraped-login-template.php:100
+msgid "signup"
+msgstr "enregistrer"
+
+#: ../index.php:51
+msgid "Signup successful"
+msgstr "Enregistrement réussi"
+
+#: ../index.php:54
+msgid "This username is taken"
+msgstr "Ce nom d'utilisateur est pris"
+
+#: ../index.php:55
+msgid "This email is already registered"
+msgstr "l'adresse de messagerie est déjà utilisée."
+
+#: ../index.php:129
+msgid "Please enter your Username or E-mail address"
+msgstr "Veuillezentrer votre nom d'utilisateur ou email"
+
+#: ../index.php:137
+msgid "Invalid E-mail address"
+msgstr "Adresse email invalide"
+
+#: ../index.php:143
+msgid "Invalid Username"
+msgstr "Nom d'utilisateur "
+
+#: ../index.php:158
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+"Une demande de réinitialisation de mot de passe a été reçue pour le compte "
+"suivant"
+
+#: ../index.php:160 ../index.php:242
+#, php-format
+msgid "Username: %s"
+msgstr "Nom d'utilisateur: %s"
+
+#: ../index.php:161
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+"Si c'était une erreur veuillez ignorer ce message et rien ne se passera"
+
+#: ../index.php:162
+msgid "To reset your password, visit the following address:"
+msgstr "Pour réinitialiser votre mot de passe visitez l'adresse suivante:"
+
+#: ../index.php:166 ../index.php:247
+msgid "Email failed to send for some unknown reason."
+msgstr "Erreur d'envoi d'email"
+
+#: ../index.php:168
+msgid "We have just sent you an email with Password reset instructions."
+msgstr ""
+"Nous venons de vous envoyer un mail de réinitialisation de mot de passe"
+
+#: ../index.php:240
+msgid "Your new password for the account at:"
+msgstr "Votre nouveau mot de passe est:"
+
+#: ../index.php:243
+#, php-format
+msgid "Password: %s"
+msgstr "Mot de passe: %s"
+
+#: ../index.php:244
+msgid "You can now login with your new password at: "
+msgstr "Vous pouvez vous connecter avec votre nouveau mot de passe ici:"
+
+#: ../index.php:250
+msgid "A new password has been sent to your email address"
+msgstr "Un nouveau mot de passe vous a été envoyé"
+
+#: ../index.php:271
+msgid "Your password has been updated"
+msgstr "Votre mot de passe a été mis à jour"
+
+#: ../index.php:290 ../index.php:366
+msgid "Update password"
+msgstr "Changer de mot de passe"
+
+#: ../index.php:311 ../index.php:388 ../index.php:468
+msgid "This field is mandatory"
+msgstr "Ce champ est obligatoire"
+
+#: ../index.php:312 ../index.php:389 ../index.php:469
+msgid "Please check this email address"
+msgstr "Veuillez vérifier votre adresse e-mail"
+
+#: ../index.php:313 ../index.php:390 ../index.php:470
+msgid "Please enter the same value again."
+msgstr "Veuillez entrer la même valeur."
+
+#: ../index.php:314 ../index.php:391 ../index.php:471 ../index.php:472
+msgid "Enter at least {0} characters"
+msgstr "Veuillez entrer au moins  {0} caractères"
+
+#: ../index.php:333
+msgid "Your password has been changed"
+msgstr "Votre mot de passe a été mis à jour"
+
+#: ../index.php:337
+msgid "Wrong password"
+msgstr "Mauvais mot de passe"
+
+#: ../index.php:347
+msgid "Old password"
+msgstr "Ancien motde passe"
+
+#: ../index.php:433
+msgid "Hi"
+msgstr "Bonjour"
+
+#: ../index.php:434
+msgid "Log out"
+msgstr "Se déconnecter"
+
+#: ../index.php:437
+msgid "Register"
+msgstr "S'enregistrer"
+
+#: ../index.php:474
+msgid "Checking email address"
+msgstr "Verification d'adresse e-mail"
+
+#: ../index.php:475
+msgid "Sending user info, please wait..."
+msgstr "Envoi d'information, veuillez patienter..."
+
+#: ../index.php:476
+msgid "Login successful, redirecting..."
+msgstr "Connection réussie, redirection..."
+
+#: ../index.php:477
+msgid "Wrong username or password."
+msgstr "Mauvais nom d'utilisateur ou mot de passe"
+
+#: ../index.php:478
+msgid "This username is already taken."
+msgstr "Ce nom d'utilisateur est pris"
+
+#~ msgid "Thanks, your message has been sent."
+#~ msgstr "Merci, votre message a été envoyé."
+
+#~ msgid "Sorry, something went wrong."
+#~ msgstr "Désolé, un problème est survenu."
+
+#~ msgid "Subject"
+#~ msgstr "Sujet:"
+
+#~ msgid "Your name"
+#~ msgstr "Votre nom"
+
+#~ msgid "Your email"
+#~ msgstr "Votre e-mail"
+
+#~ msgid "Your message"
+#~ msgstr "Votre message"
+
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgid "Information request sent from"
+#~ msgstr "Demande d'informations envoyée depuis"

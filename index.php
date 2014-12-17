@@ -16,7 +16,7 @@ Author URI: http://humanific.com
 require_once('facebook/facebook.php');
 
 
-function ajax_login(){
+function bootstrapped_ajax_login(){
     check_ajax_referer( 'ajax-login-nonce', 'security' );
     $info = array();
     $info['user_login'] = $_POST['username'];
@@ -32,11 +32,11 @@ function ajax_login(){
   die();
 }
 
-function ajax_checkusername(){
+function bootstrapped_ajax_checkusername(){
     die( username_exists($_GET['username']) ? json_encode(false) : json_encode(true) ) ;
 }
 
-function ajax_register(){
+function bootstrapped_ajax_register(){
     check_ajax_referer( 'ajax-signup-nonce', 'security-signup' );
 
     $userdata = array(
@@ -122,7 +122,7 @@ if( strpos($_SERVER['REQUEST_URI'] ,"/fblogin") !== false ){
 
 add_action('init', 'bootstrapped_login_fb_init');
 
-function ajax_lostpassword(){
+function bootstrapped_ajax_lostpassword(){
   global $wpdb;
   check_ajax_referer( 'ajax-pwd-nonce', 'security-pwd' );
   if(empty($_POST['email'])) {
@@ -173,11 +173,11 @@ function ajax_lostpassword(){
 
 function bootstrapped_login_init(){
   if(!is_user_logged_in()){
-    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
-    add_action( 'wp_ajax_nopriv_ajaxregister', 'ajax_register' );
-    add_action( 'wp_ajax_nopriv_ajaxlostpassword', 'ajax_lostpassword' );
+    add_action( 'wp_ajax_nopriv_ajaxlogin', 'bootstrapped_ajax_login' );
+    add_action( 'wp_ajax_nopriv_ajaxregister', 'bootstrapped_ajax_register' );
+    add_action( 'wp_ajax_nopriv_ajaxlostpassword', 'bootstrapped_ajax_lostpassword' );
     add_action( 'wp_ajax_nopriv_ajax_fb_login', 'ajax_fb_login' );
-    add_action( 'wp_ajax_nopriv_ajax_checkusername', 'ajax_checkusername' );
+    add_action( 'wp_ajax_nopriv_bootstrapped_ajax_checkusername', 'bootstrapped_ajax_checkusername' );
     add_action('wp_footer', 'bootstrapped_login_modal', 100);
   }
 }
@@ -190,7 +190,7 @@ function bootstrapped_login_modal(){
 }
 
 
-function save_profile($user_id){
+function bootstrapped_save_profile($user_id){
     $usermetas = array(
         'first_name'    =>  $_POST['first_name'],
         'last_name'    =>  $_POST['last_name'],
@@ -211,7 +211,7 @@ function save_profile($user_id){
 }
 
 
-function get_user_profile($user_id){
+function bootstrapped_get_user_profile($user_id){
   $usermetas = array('first_name' ,'last_name','city','country','postalcode','address','newsletter', 'children','usertitle','dob');
   $profile = array();
   foreach ($usermetas as $key) {
@@ -397,23 +397,23 @@ function bootstrapped_change_pwd_form (){
 }
 
 
-function changepasswordform_shortcode( $atts, $content = null ) {
+function bootstrapped_changebootstrapped_passwordform_shortcode( $atts, $content = null ) {
    ob_start();
    bootstrapped_change_pwd_form();
   return ob_get_clean();
 }
 
-add_shortcode( 'changepasswordform', 'changepasswordform_shortcode' );
+add_shortcode( 'changepasswordform', 'bootstrapped_changebootstrapped_passwordform_shortcode' );
 
 
 
-function passwordform_shortcode( $atts, $content = null ) {
+function bootstrapped_passwordform_shortcode( $atts, $content = null ) {
    ob_start();
    bootstrapped_pwd_form();
   return ob_get_clean();
 }
 
-add_shortcode( 'passwordform', 'passwordform_shortcode' );
+add_shortcode( 'passwordform', 'bootstrapped_passwordform_shortcode' );
 
 
 
@@ -422,7 +422,7 @@ add_shortcode( 'passwordform', 'passwordform_shortcode' );
 
 
 
-function usermenu_shortcode( $atts, $content = null ) {
+function usermenu_shortcodepasswordform_shortcode( $atts, $content = null ) {
    ob_start();?>
 
       <?php if ( is_user_logged_in() ):
@@ -441,7 +441,7 @@ function usermenu_shortcode( $atts, $content = null ) {
   return ob_get_clean();
 }
 
-add_shortcode( 'usermenu', 'usermenu_shortcode' );
+add_shortcode( 'usermenu', 'usermenu_shortcodepasswordform_shortcode' );
 
 add_filter('widget_text', 'do_shortcode');
 
@@ -524,9 +524,55 @@ function bootstrapped_login_full_path(){
 
 
 
+function bootstrapped_login_load_textdomain() {
+  load_plugin_textdomain('bootstrapped-login', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'); 
+}
+add_action('init', 'bootstrapped_login_load_textdomain');
 
 
+add_action('admin_menu', 'bootstrapped_login_menu_init');
+
+function bootstrapped_login_menu_init(){
+    add_menu_page('bootstrapped', 'Facebook API', 'manage_options', 'bootstrapped_login_menu_settings', 'bootstrapped_login_menu_settings');
+}
+
+function bootstrapped_login_menu_settings(){
+?>
+<div class="wrap">
+
+  <div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".__('FALAC theme settings')."</h2>";?>
+    <form  method="post">
+        <?php 
+          if($_POST) {
+            update_option( 'bootstrapped-login-fb-appid', $_POST['fb_appid'] );
+            update_option( 'bootstrapped-login-fb-appsecret', $_POST['fb_appsecret'] );
+            update_option( 'bootstrapped-login-fb', $_POST['fb'] );
+            echo "settings saved";
+          }
+        ?>
+  <h3>Facebook API keys</h3>
+<table class="form-table">
+<tr>
+<th scope="row"><label for="fb">Enable Facebook login</label></th>
+<td><input name="fb" type="checkbox" id="fb" value="1" <?php echo get_option('bootstrapped-login-fb') ? ' checked ':'' ?> /></td>
+</tr>
+<tr>
+<th scope="row"><label for="appid">App ID</label></th>
+<td><input name="fb_appid" type="text" id="fb_appid" value="<?php echo esc_attr( get_option('bootstrapped-login-fb-appid') ); ?>" class="regular-text" /></td>
+</tr>
+<tr>
+<th scope="row"><label for="appsecret">App secret</label></th>
+<td><input name="fb_appsecret" type="text" id="fb_appsecret" value="<?php echo esc_attr( get_option('bootstrapped-login-fb-appsecret') ); ?>" class="regular-text" /></td>
+</tr>
+</table>
+<p class="submit">
+<input class="button button-primary" type="submit" name="Submit" value="<?php _e('Save Changes' ) ?>" />
+</p>
+</form>
 
 
+</div> <!-- end wrap -->
+<?php
+}
 
 ?>
