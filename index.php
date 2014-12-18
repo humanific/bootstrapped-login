@@ -533,14 +533,14 @@ add_action('init', 'bootstrapped_login_load_textdomain');
 add_action('admin_menu', 'bootstrapped_login_menu_init');
 
 function bootstrapped_login_menu_init(){
-    add_menu_page('bootstrapped', 'Facebook API', 'manage_options', 'bootstrapped_login_menu_settings', 'bootstrapped_login_menu_settings');
+    add_menu_page('bootstrapped', 'Bootstrapped Login', 'manage_options', 'bootstrapped_login_menu_settings', 'bootstrapped_login_menu_settings');
 }
 
 function bootstrapped_login_menu_settings(){
 ?>
 <div class="wrap">
 
-  <div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".__('FALAC theme settings')."</h2>";?>
+  <div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".__('Bootstrapped Login settings')."</h2>";?>
     <form  method="post">
         <?php 
           if($_POST) {
