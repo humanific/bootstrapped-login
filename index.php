@@ -13,7 +13,9 @@ Author URI: http://humanific.com
 */
 
 
-require_once('facebook/facebook.php');
+if(!class_exists('Facebook')) {
+  require_once('facebook/facebook.php');
+}
 
 
 function bootstrapped_ajax_login(){
@@ -417,14 +419,8 @@ add_shortcode( 'passwordform', 'bootstrapped_passwordform_shortcode' );
 
 
 
-
-
-
-
-
-function usermenu_shortcodepasswordform_shortcode( $atts, $content = null ) {
+function bootstrapped_usermenu_shortcode( $atts, $content = null ) {
    ob_start();?>
-
       <?php if ( is_user_logged_in() ):
         global $current_user;
         get_currentuserinfo();
@@ -441,9 +437,41 @@ function usermenu_shortcodepasswordform_shortcode( $atts, $content = null ) {
   return ob_get_clean();
 }
 
-add_shortcode( 'usermenu', 'usermenu_shortcodepasswordform_shortcode' );
+add_shortcode( 'usermenu', 'bootstrapped_usermenu_shortcode' );
 
 add_filter('widget_text', 'do_shortcode');
+
+
+function bootstrapped_check_user_role( $role, $user_id = null ) {
+  if ( is_numeric( $user_id ) )
+    $user = get_userdata( $user_id );
+  else
+    $user = wp_get_current_user();
+  if ( empty( $user ) )
+    return false;
+  return in_array( $role, (array) $user->roles );
+}
+
+
+function bootstrapped_useraccess_shortcode( $atts, $content = null ) {
+  if(is_user_logged_in()){
+    global $current_user;
+    $data = array('user_nicename','user_email','user_login');
+    get_currentuserinfo();
+    foreach ($data as $key) {
+      $content = str_replace('{{'.$key.'}}',$current_user->data->{$key}, $content);
+    }
+  }
+  if(!isset($atts['grant']) || $atts['grant']=="subscriber" ){
+    return is_user_logged_in() ? $content : "" ;
+  } elseif ($atts['grant']=="loggedoff" && !is_user_logged_in()) {
+    return $content ;
+  } elseif (bootstrapped_check_user_role($atts['grant'])) {
+    return $content;
+  }
+}
+add_shortcode( 'useraccess', 'bootstrapped_useraccess_shortcode' );
+
 
 
 function bootstrapped_forget_password_form(){
