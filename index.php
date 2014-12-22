@@ -420,19 +420,29 @@ add_shortcode( 'passwordform', 'bootstrapped_passwordform_shortcode' );
 
 
 function bootstrapped_usermenu_shortcode( $atts, $content = null ) {
+  $tag = $atts['tag']=="li" ? 'li' : 'div';
    ob_start();?>
       <?php if ( is_user_logged_in() ):
         global $current_user;
         get_currentuserinfo();
         $fb = get_user_meta( $current_user->ID, 'fbid', true );
-        if($fb) echo '<img src="https://graph.facebook.com/'.$fb.'/picture" width="15" height="15" alt="icon" class="fbimage"/> ';
-        echo __('Hi','bootstrapped-login').' '.$current_user->display_name;?> &nbsp;
-        <a class="navbar-link" href="<?php echo wp_logout_url( bootstrapped_login_full_path() ); ?>" title="<?php _e('Log out','bootstrapped-login');?>"><?php _e('Log out','bootstrapped-login');?></a>
+        
+        ?> 
+        <<?php echo $tag;?> class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+        <?php if($fb) echo '<img src="https://graph.facebook.com/'.$fb.'/picture" width="15" height="15" alt="icon" class="fbimage"/> ';?> <?php echo __('Hi','bootstrapped-login').' '.$current_user->display_name;?> 
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" >
+        <li><a href="<?php echo wp_logout_url( bootstrapped_login_full_path() );?>"><i class="glyphicon glyphicon-log-out"></i> <?php _e('Sign out','bootstrapped-login');?></a></li>
+        </ul>
+        </<?php echo $tag;?>>
       <?php else:?>
-      <a href="#"  class="ajaxlogin navbar-link" ><?php _e('Log in','bootstrapped-login');?></a> &nbsp;
-      <a href="#"  class="ajaxsignup navbar-link" ><?php _e('Register','bootstrapped-login');?></a>
+        <<?php echo $tag;?> class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="glyphicon glyphicon-log-in "></i> <?php _e('Sign in','bootstrapped-login');?> <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" >
+        <li><a href="#" class="ajaxlogin"><?php _e('Log in','bootstrapped-login');?></a></li>
+        <li><a href="#" class="ajaxsignup"><?php _e('Register','bootstrapped-login');?></a></li>
+        </ul>
+        </<?php echo $tag;?>>
       <?php endif;?>
-
    <?php
   return ob_get_clean();
 }
@@ -461,6 +471,7 @@ function bootstrapped_useraccess_shortcode( $atts, $content = null ) {
     foreach ($data as $key) {
       $content = str_replace('{{'.$key.'}}',$current_user->data->{$key}, $content);
     }
+    $content = str_replace('{{logouturl}}', wp_logout_url( bootstrapped_login_full_path() ) , $content);
   }
   if(!isset($atts['grant']) || $atts['grant']=="subscriber" ){
     return is_user_logged_in() ? $content : "" ;
