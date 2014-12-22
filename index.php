@@ -172,6 +172,13 @@ function bootstrapped_ajax_lostpassword(){
 
 }
 
+add_action('after_setup_theme', 'bootstrapped_login_remove_admin_bar');
+
+function bootstrapped_login_remove_admin_bar() {
+  if (!current_user_can('administrator') && !is_admin()) {
+    show_admin_bar(false);
+  }
+}
 
 function bootstrapped_login_init(){
   if(!is_user_logged_in()){
@@ -179,7 +186,7 @@ function bootstrapped_login_init(){
     add_action( 'wp_ajax_nopriv_ajaxregister', 'bootstrapped_ajax_register' );
     add_action( 'wp_ajax_nopriv_ajaxlostpassword', 'bootstrapped_ajax_lostpassword' );
     add_action( 'wp_ajax_nopriv_ajax_fb_login', 'ajax_fb_login' );
-    add_action( 'wp_ajax_nopriv_bootstrapped_ajax_checkusername', 'bootstrapped_ajax_checkusername' );
+    add_action( 'wp_ajax_nopriv_ajax_checkusername', 'bootstrapped_ajax_checkusername' );
     add_action('wp_footer', 'bootstrapped_login_modal', 100);
   }
 }
