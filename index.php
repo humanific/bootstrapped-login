@@ -511,8 +511,8 @@ function bootstrapped_login_signup_vars(){
     'secret' => get_option('fb_appsecret')
   ));
 
-  return array( 'validate_required' =>__("This field is mandatory",'bootstrapped-login'),
-      'validate_email' =>__('Please check this email address','bootstrapped-login'),
+  return array( 'validate_required' =>__("This field is required",'bootstrapped-login'),
+      'validate_email' =>__('Please enter a valid email address','bootstrapped-login'),
       'validate_equalTo' =>__('Please enter the same value again.','bootstrapped-login'),
       'validate_minlength' =>__('Enter at least {0} characters','bootstrapped-login'),
       'validate_alphanumeric' =>__('Enter at least {0} characters','bootstrapped-login'),
