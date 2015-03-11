@@ -1,0 +1,232 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bootstraped-login\n"
+"POT-Creation-Date: 2014-12-17 10:15+0700\n"
+"PO-Revision-Date: 2015-02-16 13:45+0700\n"
+"Last-Translator: François Richir <francoisrichir@gmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../additional-methods.min.js\n"
+
+#: ../bootstraped-login-template.php:7 ../bootstraped-login-template.php:98
+msgid "Forgotten password"
+msgstr "Wachtwoord vergeten?"
+
+#: ../bootstraped-login-template.php:15 ../bootstraped-login-template.php:43
+msgid "Email"
+msgstr "Email"
+
+#: ../bootstraped-login-template.php:21
+msgid "Reset Password"
+msgstr "Wachtwoord herzetten"
+
+#: ../bootstraped-login-template.php:29
+msgid "Register with facebook"
+msgstr "Registreren met facebook"
+
+#: ../bootstraped-login-template.php:30 ../bootstraped-login-template.php:70
+msgid "or"
+msgstr "of"
+
+#: ../bootstraped-login-template.php:38
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: ../bootstraped-login-template.php:49 ../bootstraped-login-template.php:83
+#: ../index.php:277 ../index.php:353
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: ../bootstraped-login-template.php:54 ../index.php:283 ../index.php:359
+msgid "Repeat password"
+msgstr "Wachtwoord opnieuw"
+
+#: ../bootstraped-login-template.php:61
+msgid "Sign up"
+msgstr "Inschrijven"
+
+#: ../bootstraped-login-template.php:69
+msgid "Login with facebook"
+msgstr "Login met Facebook"
+
+#: ../bootstraped-login-template.php:78
+msgid "Email or username"
+msgstr "Email of gebruikersnaam"
+
+#: ../bootstraped-login-template.php:89 ../index.php:436
+msgid "Log in"
+msgstr "Inloggen"
+
+#: ../bootstraped-login-template.php:100
+msgid "If you don't have an account yet, please"
+msgstr "Als u al geregistreerd bent kan u"
+
+#: ../bootstraped-login-template.php:100
+msgid "signup"
+msgstr "registreren"
+
+#: ../index.php:51
+msgid "Signup successful"
+msgstr "Successvolle registratie"
+
+#: ../index.php:54
+msgid "This username is taken"
+msgstr "Deze gebruikersnaam is al ingenomen"
+
+#: ../index.php:55
+msgid "This email is already registered"
+msgstr "Dit e-mailadres is reeds geregistreerd, kies een andere."
+
+#: ../index.php:129
+msgid "Please enter your Username or E-mail address"
+msgstr "Vul uw gebruikersnaam of e-mailadres"
+
+#: ../index.php:137
+msgid "Invalid E-mail address"
+msgstr "Ongeldig e-mailadres"
+
+#: ../index.php:143
+msgid "Invalid Username"
+msgstr "Ongeldige gebruikersnaam"
+
+#: ../index.php:158
+msgid "Someone requested that the password be reset for the following account:"
+msgstr "Iemand verzocht het wachtwoord te resetten voor de volgende rekening:"
+
+#: ../index.php:160 ../index.php:242
+#, php-format
+msgid "Username: %s"
+msgstr "Gebruikersnaam: %s"
+
+#: ../index.php:161
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Als dit een vergissing was, negeer deze e-mail en niets zal gebeuren."
+
+#: ../index.php:162
+msgid "To reset your password, visit the following address:"
+msgstr "Om uw wachtwoord opnieuw in te stellen, gaat u naar het volgende adres:"
+
+#: ../index.php:166 ../index.php:247
+msgid "Email failed to send for some unknown reason."
+msgstr "E-mail niet aan te sturen voor een onbekende reden."
+
+#: ../index.php:168
+msgid "We have just sent you an email with Password reset instructions."
+msgstr "We hebben je zojuist een e-mail met wachtwoord reset instructies."
+
+#: ../index.php:240
+msgid "Your new password for the account at:"
+msgstr "Uw nieuwe wachtwoord voor de rekening op:"
+
+#: ../index.php:243
+#, php-format
+msgid "Password: %s"
+msgstr "Wachtwoord: %s"
+
+#: ../index.php:244
+msgid "You can now login with your new password at: "
+msgstr "U kunt nu inloggen met uw nieuwe wachtwoord op: "
+
+#: ../index.php:250
+msgid "A new password has been sent to your email address"
+msgstr "Een nieuw wachtwoord is naar uw e-mailadres gestuurd"
+
+#: ../index.php:271
+msgid "Your password has been updated"
+msgstr "Uw passwoord is gewijzigd"
+
+#: ../index.php:290 ../index.php:366
+msgid "Update password"
+msgstr "Passwoord wijzigen"
+
+#: ../index.php:311 ../index.php:388 ../index.php:468
+msgid "This field is mandatory"
+msgstr "Dit veld is verplicht"
+
+#: ../index.php:312 ../index.php:389 ../index.php:469
+msgid "Please check this email address"
+msgstr "Gelieve dit e-mailadres aan te passen"
+
+#: ../index.php:313 ../index.php:390 ../index.php:470
+msgid "Please enter the same value again."
+msgstr "Typ het nieuwe wachtwoord opnieuw in."
+
+#: ../index.php:314 ../index.php:391 ../index.php:471 ../index.php:472
+msgid "Enter at least {0} characters"
+msgstr "Vul ten minsten  {0} letters in"
+
+#: ../index.php:333
+msgid "Your password has been changed"
+msgstr "Uw passwoord is gewijzigd"
+
+#: ../index.php:337
+msgid "Wrong password"
+msgstr "Fout passwoord"
+
+#: ../index.php:347
+msgid "Old password"
+msgstr "Oud passwoord"
+
+#: ../index.php:433
+msgid "Hi"
+msgstr "Hallo"
+
+#: ../index.php:434
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: ../index.php:437
+msgid "Register"
+msgstr "Registreren"
+
+#: ../index.php:474
+msgid "Checking email address"
+msgstr "Email verificatie"
+
+#: ../index.php:475
+msgid "Sending user info, please wait..."
+msgstr "Verzenden van gebruikersinformatie, even geduld ..."
+
+#: ../index.php:476
+msgid "Login successful, redirecting..."
+msgstr "Login gelukt redirectie..."
+
+#: ../index.php:477
+msgid "Wrong username or password."
+msgstr "Verkeerde gebruikersnaam of wachtwoord."
+
+#: ../index.php:478
+msgid "This username is already taken."
+msgstr "Deze gebruikersnaam wordt al gebruikt."
+
+#~ msgid "Thanks, your message has been sent."
+#~ msgstr "Merci, votre message a été envoyé."
+
+#~ msgid "Sorry, something went wrong."
+#~ msgstr "Désolé, un problème est survenu."
+
+#~ msgid "Subject"
+#~ msgstr "Sujet:"
+
+#~ msgid "Your name"
+#~ msgstr "Votre nom"
+
+#~ msgid "Your email"
+#~ msgstr "Votre e-mail"
+
+#~ msgid "Your message"
+#~ msgstr "Votre message"
+
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgid "Information request sent from"
+#~ msgstr "Demande d'informations envoyée depuis"

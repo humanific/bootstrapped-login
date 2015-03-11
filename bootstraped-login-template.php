@@ -7,8 +7,6 @@
             <h4><?php _e('Forgotten password','bootstrapped-login');?></h4>
           <input type="hidden" name="action" value="tg_pwd_reset" />
           <?php wp_nonce_field( 'ajax-pwd-nonce', 'security-pwd' ); ?>       
-          
-          
           <div class="form-group">
             <div id="passstatus"></div>
           <div>
@@ -18,12 +16,10 @@
             
             <div class="form-group">
               <div>
-                <input type="submit" name="submit" class="btn btn-primary btn-lg" value="<?php _e('Reset Password'); ?>"/>
+                <input type="submit" name="submit" class="btn btn-primary btn-lg" value="<?php _e('Reset Password','bootstrapped-login'); ?>"/>
               </div>
             </div>
           </form>
-
-
           <form id="signupform" action="" method="post"> 
             <?php if(get_option('bootstrapped-login-fb')) : ?>
             <a class="btn btn-default btn-fb fb_login btn-lg" href="#"><?php _e('Register with facebook','bootstrapped-login');?></a>
@@ -55,15 +51,12 @@
             </div>
             </div>
             <?php wp_nonce_field( 'ajax-signup-nonce', 'security-signup' ); ?>
-            
             <div class="form-group">
               <div>
                 <input type="submit" name="submit" class="btn btn-primary btn-lg" value="<?php _e('Sign up','bootstrapped-login'); ?>"/>
               </div>
             </div>
           </form>
-
-
          <form id="loginform"  method="post">
             <?php if(get_option('bootstrapped-login-fb')) : ?>
             <a class="btn btn-default btn-fb fb_login btn-lg" href="#"><?php _e('Login with facebook','bootstrapped-login');?></a>

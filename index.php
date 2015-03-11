@@ -38,6 +38,11 @@ function bootstrapped_ajax_checkusername(){
     die( username_exists($_GET['username']) ? json_encode(false) : json_encode(true) ) ;
 }
 
+function bootstrapped_ajax_checkemail(){
+    die( email_exists($_GET['email']) ? json_encode(false) : json_encode(true) ) ;
+}
+
+
 function bootstrapped_ajax_register(){
     check_ajax_referer( 'ajax-signup-nonce', 'security-signup' );
 
@@ -187,6 +192,7 @@ function bootstrapped_login_init(){
     add_action( 'wp_ajax_nopriv_ajaxlostpassword', 'bootstrapped_ajax_lostpassword' );
     add_action( 'wp_ajax_nopriv_ajax_fb_login', 'ajax_fb_login' );
     add_action( 'wp_ajax_nopriv_ajax_checkusername', 'bootstrapped_ajax_checkusername' );
+    add_action( 'wp_ajax_nopriv_ajax_checkemail', 'bootstrapped_ajax_checkemail' );
     add_action('wp_footer', 'bootstrapped_login_modal', 100);
   }
 }
@@ -195,7 +201,11 @@ add_action('init', 'bootstrapped_login_init');
 
 
 function bootstrapped_login_modal(){ 
- include 'bootstraped-login-template.php';
+ if(file_exists( trailingslashit( get_stylesheet_directory() ) . 'bootstraped-login-template.php')){
+    include trailingslashit( get_stylesheet_directory() ) . 'bootstraped-login-template.php';
+  } else{
+    include 'bootstraped-login-template.php';
+  }
 }
 
 
@@ -406,13 +416,13 @@ function bootstrapped_change_pwd_form (){
 }
 
 
-function bootstrapped_changebootstrapped_passwordform_shortcode( $atts, $content = null ) {
+function bootstrapped_change_passwordform_shortcode( $atts, $content = null ) {
    ob_start();
    bootstrapped_change_pwd_form();
   return ob_get_clean();
 }
 
-add_shortcode( 'changepasswordform', 'bootstrapped_changebootstrapped_passwordform_shortcode' );
+add_shortcode( 'changepasswordform', 'bootstrapped_change_passwordform_shortcode' );
 
 
 
@@ -466,7 +476,8 @@ function bootstrapped_check_user_role( $role, $user_id = null ) {
     $user = wp_get_current_user();
   if ( empty( $user ) )
     return false;
-  return in_array( $role, (array) $user->roles );
+  if (in_array( strtolower($role) , $user->roles )) return true;
+  return false;
 }
 
 
@@ -489,7 +500,6 @@ function bootstrapped_useraccess_shortcode( $atts, $content = null ) {
   }
 }
 add_shortcode( 'useraccess', 'bootstrapped_useraccess_shortcode' );
-
 
 
 function bootstrapped_forget_password_form(){

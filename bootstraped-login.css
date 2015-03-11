@@ -4,7 +4,7 @@
 #contest{text-align:center;}
 .btn.btn-fb {
   border:1px solid #1c3062;
-  background:#4c66a4 url('fb.png')  10px  5px   no-repeat;
+  background:#4c66a4 url('fb.png')  10px  center  no-repeat;
   color:#fff;
   padding-left: 40px
 }

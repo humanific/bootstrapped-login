@@ -3,7 +3,7 @@ jQuery(function($) {
           error:ajaxlogin.login_error, 
           success:ajaxlogin.login_successfull
         }
-
+        var redirect = null;
         $('form#loginform').on('submit', function(e){
               $('#loginform input[type="submit"]').attr('disabled','disabled');
               $('#loginstatus').show().text(ajaxlogin.sending_info).attr( "class", "alert alert-info" );
@@ -19,7 +19,8 @@ jQuery(function($) {
                   success: function(data){
                       $('#loginstatus').show().text(msgs[data.message]);
                       if (data.loggedin == true){
-                          window.location.reload();
+                          if( redirect ) window.location = redirect;
+                          else window.location.reload();
                           $('#loginstatus').attr( "class", "alert alert-success" );
                       }else{
                         $('#loginstatus').attr( "class", "alert alert-danger" );
@@ -82,9 +83,16 @@ jQuery(function($) {
         });
 
         $('.ajaxlogin').click(function(e){
+          var r = $(this).attr('data-redirect');
+          if(r) redirect = r;
           showModal('loginform');
-           e.preventDefault();
+          e.preventDefault();
         })
+
+
+        document.ajaxlogin = function(){
+          showModal('loginform');
+        }
 
         $('.ajaxsignup').click(function(e){
           showModal('signupform');
@@ -149,15 +157,17 @@ jQuery(function($) {
           }
         }
       });
+      if($.validator.messages){
+        $.extend($.validator.messages, {
+              required: ajaxlogin.validate_required, 
+              email: ajaxlogin.validate_email, 
+              equalTo: ajaxlogin.validate_equalTo, 
+              minlength: $.validator.format(ajaxlogin.validate_minlength),
+              remote : ajaxlogin.validate_username,
+              alphanumeric : ajaxlogin.validate_alphanumeric
+         });
 
-      jQuery.extend(jQuery.validator.messages, {
-            required: ajaxlogin.validate_required, 
-            email: ajaxlogin.validate_email, 
-            equalTo: ajaxlogin.validate_equalTo, 
-            minlength: jQuery.validator.format(ajaxlogin.validate_minlength),
-            remote : ajaxlogin.validate_username,
-            alphanumeric : ajaxlogin.validate_alphanumeric
-       });
+      }
 
 
 $('.fb_login').click(function(e){
