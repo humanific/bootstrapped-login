@@ -491,6 +491,10 @@ function bootstrapped_useraccess_shortcode( $atts, $content = null ) {
     }
     $content = str_replace('{{logouturl}}', wp_logout_url( bootstrapped_login_full_path() ) , $content);
   }
+
+  $content = do_shortcode($content);
+
+
   if(!isset($atts['grant']) || $atts['grant']=="subscriber" ){
     return is_user_logged_in() ? $content : "" ;
   } elseif ($atts['grant']=="loggedoff" && !is_user_logged_in()) {
@@ -499,6 +503,8 @@ function bootstrapped_useraccess_shortcode( $atts, $content = null ) {
     return $content;
   }
 }
+
+
 add_shortcode( 'useraccess', 'bootstrapped_useraccess_shortcode' );
 
 
