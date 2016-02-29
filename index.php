@@ -25,6 +25,9 @@ function bootstrapped_ajax_login(){
     if ( is_wp_error($user_signon) ){
         echo json_encode(array('loggedin'=>false, 'message'=>'error'));
     } else {
+		wp_set_current_user($user_signon->ID);
+        wp_set_current_user( $user_signon->ID);
+        wp_set_auth_cookie( $user_signon->ID );
         echo json_encode(array('loggedin'=>true, 'message'=>'success'));
     }
   die();
@@ -101,7 +104,7 @@ function bootstrapped_ajax_lostpassword(){
     $langrequest = '&lang='.$_POST['lang'];
   }
   $message .=  get_option('siteurl'). "?resetpassword&key=" . rawurlencode($key) . "&login=" . $user_login .  $langrequest ."\r\n\r\n";
-  $message = apply_filters('bootstrapped_login_reset_pwd_email_message')
+  $message = apply_filters('bootstrapped_login_reset_pwd_email_message', $message);
   do_action('bootstrapped_login_reset_pwd_email', array('message' => $message,'email'=> $user_email));
   
   if ( $message && !wp_mail($user_email, __('Password Reset Request','bootstrapped-login'), $message, array('Content-Type: text/plain; charset=UTF-8')) ) {
