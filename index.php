@@ -104,8 +104,8 @@ function bootstrapped_ajax_lostpassword(){
     $langrequest = '&lang='.$_POST['lang'];
   }
   $resetlink =  get_option('siteurl'). "?resetpassword&key=" . rawurlencode($key) . "&login=" . $user_login .  $langrequest ."\r\n\r\n";
-  $message = apply_filters('bootstrapped_login_reset_pwd_email_message', $message, $resetlink);
-  do_action('bootstrapped_login_reset_pwd_email', array('message' => $message.$resetlink ,'email'=> $user_email));
+  $message = apply_filters('bootstrapped_login_reset_pwd_email_message', $message.$resetlink, $resetlink, $user_email);
+  do_action('bootstrapped_login_reset_pwd_email', array('message' => $message ,'email'=> $user_email , 'link'=>$resetlink));
   
   if ( $message && !wp_mail($user_email, __('Password Reset Request','bootstrapped-login'), $message, array('Content-Type: text/plain; charset=UTF-8')) ) {
      die("<div class='alert alert-danger'>".__('Email failed to send for some unknown reason.','bootstrapped-login')."</div>");
