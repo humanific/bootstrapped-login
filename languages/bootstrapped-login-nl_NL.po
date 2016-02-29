@@ -1,211 +1,263 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bootstraped-login\n"
-"POT-Creation-Date: 2014-12-17 10:15+0700\n"
-"PO-Revision-Date: 2015-02-16 13:45+0700\n"
+"POT-Creation-Date: 2015-05-14 16:53+0700\n"
+"PO-Revision-Date: 2015-05-14 17:29+0700\n"
 "Last-Translator: François Richir <francoisrichir@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;_nx:4c,1,2\n"
 "X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-SearchPathExcluded-0: ../additional-methods.min.js\n"
+"X-Poedit-SearchPathExcluded-0: ../js\n"
 
-#: ../bootstraped-login-template.php:7 ../bootstraped-login-template.php:98
+#: ../bootstraped-login-template.php:7 ../bootstraped-login-template.php:91
 msgid "Forgotten password"
 msgstr "Wachtwoord vergeten?"
 
-#: ../bootstraped-login-template.php:15 ../bootstraped-login-template.php:43
+#: ../bootstraped-login-template.php:13 ../bootstraped-login-template.php:39
 msgid "Email"
 msgstr "Email"
 
-#: ../bootstraped-login-template.php:21
+#: ../bootstraped-login-template.php:19
 msgid "Reset Password"
 msgstr "Wachtwoord herzetten"
 
-#: ../bootstraped-login-template.php:29
+#: ../bootstraped-login-template.php:25
 msgid "Register with facebook"
 msgstr "Registreren met facebook"
 
-#: ../bootstraped-login-template.php:30 ../bootstraped-login-template.php:70
+#: ../bootstraped-login-template.php:26 ../bootstraped-login-template.php:63
 msgid "or"
 msgstr "of"
 
-#: ../bootstraped-login-template.php:38
+#: ../bootstraped-login-template.php:28 ../index.php:478
+msgid "Register"
+msgstr "Registreren"
+
+#: ../bootstraped-login-template.php:34
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: ../bootstraped-login-template.php:49 ../bootstraped-login-template.php:83
-#: ../index.php:277 ../index.php:353
+#: ../bootstraped-login-template.php:45 ../bootstraped-login-template.php:76
+#: ../bootstrapped_login_resetpassword.php:33 ../index.php:301
+#: ../index.php:391
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: ../bootstraped-login-template.php:54 ../index.php:283 ../index.php:359
+#: ../bootstraped-login-template.php:50
+#: ../bootstrapped_login_resetpassword.php:39 ../index.php:307
+#: ../index.php:397
 msgid "Repeat password"
 msgstr "Wachtwoord opnieuw"
 
-#: ../bootstraped-login-template.php:61
+#: ../bootstraped-login-template.php:56
 msgid "Sign up"
 msgstr "Inschrijven"
 
-#: ../bootstraped-login-template.php:69
+#: ../bootstraped-login-template.php:62
 msgid "Login with facebook"
 msgstr "Login met Facebook"
 
-#: ../bootstraped-login-template.php:78
+#: ../bootstraped-login-template.php:65
+msgid "Login"
+msgstr "Inloggen"
+
+#: ../bootstraped-login-template.php:71
 msgid "Email or username"
 msgstr "Email of gebruikersnaam"
 
-#: ../bootstraped-login-template.php:89 ../index.php:436
+#: ../bootstraped-login-template.php:82 ../index.php:477
 msgid "Log in"
 msgstr "Inloggen"
 
-#: ../bootstraped-login-template.php:100
+#: ../bootstraped-login-template.php:93
 msgid "If you don't have an account yet, please"
 msgstr "Als u al geregistreerd bent kan u"
 
-#: ../bootstraped-login-template.php:100
+#: ../bootstraped-login-template.php:93
 msgid "signup"
 msgstr "registreren"
 
-#: ../index.php:51
+#: ../bootstrapped_login_resetpassword.php:21
+#: ../bootstrapped_login_resetpassword.php:26
+msgid "Reset your password"
+msgstr "Wachtwoord herzetten"
+
+#: ../bootstrapped_login_resetpassword.php:22 ../index.php:295
+msgid "Your password has been updated"
+msgstr "Uw passwoord is gewijzigd"
+
+#: ../bootstrapped_login_resetpassword.php:28
+msgid "Choose a new password"
+msgstr "Nieuw wachtwoord"
+
+#: ../bootstrapped_login_resetpassword.php:46 ../index.php:314
+#: ../index.php:404
+msgid "Update password"
+msgstr "Passwoord wijzigen"
+
+#: ../bootstrapped_login_resetpassword.php:71 ../index.php:335
+#: ../index.php:426
+msgid "This field is mandatory"
+msgstr "Dit veld is verplicht"
+
+#: ../bootstrapped_login_resetpassword.php:72 ../index.php:336
+#: ../index.php:427
+msgid "Please check this email address"
+msgstr "Gelieve dit e-mailadres aan te passen"
+
+#: ../bootstrapped_login_resetpassword.php:73 ../index.php:337
+#: ../index.php:428 ../index.php:551
+msgid "Please enter the same value again."
+msgstr "Typ het nieuwe wachtwoord opnieuw in."
+
+#: ../bootstrapped_login_resetpassword.php:74 ../index.php:338
+#: ../index.php:429 ../index.php:552 ../index.php:553
+msgid "Enter at least {0} characters"
+msgstr "Vul ten minsten  {0} letters in"
+
+#: ../bootstrapped_login_resetpassword.php:82 ../index.php:346
+msgid "Not a Valid Key."
+msgstr "Dit is geen geldige code"
+
+#: ../index.php:58
 msgid "Signup successful"
 msgstr "Successvolle registratie"
 
-#: ../index.php:54
+#: ../index.php:61
 msgid "This username is taken"
 msgstr "Deze gebruikersnaam is al ingenomen"
 
-#: ../index.php:55
+#: ../index.php:62
 msgid "This email is already registered"
 msgstr "Dit e-mailadres is reeds geregistreerd, kies een andere."
 
-#: ../index.php:129
+#: ../index.php:136
 msgid "Please enter your Username or E-mail address"
 msgstr "Vul uw gebruikersnaam of e-mailadres"
 
-#: ../index.php:137
+#: ../index.php:144
 msgid "Invalid E-mail address"
 msgstr "Ongeldig e-mailadres"
 
-#: ../index.php:143
+#: ../index.php:150
 msgid "Invalid Username"
 msgstr "Ongeldige gebruikersnaam"
 
-#: ../index.php:158
+#: ../index.php:165
 msgid "Someone requested that the password be reset for the following account:"
 msgstr "Iemand verzocht het wachtwoord te resetten voor de volgende rekening:"
 
-#: ../index.php:160 ../index.php:242
+#: ../index.php:167 ../index.php:266
 #, php-format
 msgid "Username: %s"
 msgstr "Gebruikersnaam: %s"
 
-#: ../index.php:161
+#: ../index.php:168
 msgid "If this was a mistake, just ignore this email and nothing will happen."
 msgstr "Als dit een vergissing was, negeer deze e-mail en niets zal gebeuren."
 
-#: ../index.php:162
+#: ../index.php:169
 msgid "To reset your password, visit the following address:"
 msgstr "Om uw wachtwoord opnieuw in te stellen, gaat u naar het volgende adres:"
 
-#: ../index.php:166 ../index.php:247
+#: ../index.php:177
+msgid "Password Reset Request"
+msgstr "Wachtwoord herzetten"
+
+#: ../index.php:178 ../index.php:271
 msgid "Email failed to send for some unknown reason."
 msgstr "E-mail niet aan te sturen voor een onbekende reden."
 
-#: ../index.php:168
+#: ../index.php:180
 msgid "We have just sent you an email with Password reset instructions."
 msgstr "We hebben je zojuist een e-mail met wachtwoord reset instructies."
 
-#: ../index.php:240
+#: ../index.php:264
 msgid "Your new password for the account at:"
 msgstr "Uw nieuwe wachtwoord voor de rekening op:"
 
-#: ../index.php:243
+#: ../index.php:267
 #, php-format
 msgid "Password: %s"
 msgstr "Wachtwoord: %s"
 
-#: ../index.php:244
+#: ../index.php:268
 msgid "You can now login with your new password at: "
 msgstr "U kunt nu inloggen met uw nieuwe wachtwoord op: "
 
-#: ../index.php:250
+#: ../index.php:274
 msgid "A new password has been sent to your email address"
 msgstr "Een nieuw wachtwoord is naar uw e-mailadres gestuurd"
 
-#: ../index.php:271
-msgid "Your password has been updated"
-msgstr "Uw passwoord is gewijzigd"
-
-#: ../index.php:290 ../index.php:366
-msgid "Update password"
-msgstr "Passwoord wijzigen"
-
-#: ../index.php:311 ../index.php:388 ../index.php:468
-msgid "This field is mandatory"
-msgstr "Dit veld is verplicht"
-
-#: ../index.php:312 ../index.php:389 ../index.php:469
-msgid "Please check this email address"
-msgstr "Gelieve dit e-mailadres aan te passen"
-
-#: ../index.php:313 ../index.php:390 ../index.php:470
-msgid "Please enter the same value again."
-msgstr "Typ het nieuwe wachtwoord opnieuw in."
-
-#: ../index.php:314 ../index.php:391 ../index.php:471 ../index.php:472
-msgid "Enter at least {0} characters"
-msgstr "Vul ten minsten  {0} letters in"
-
-#: ../index.php:333
+#: ../index.php:371
 msgid "Your password has been changed"
 msgstr "Uw passwoord is gewijzigd"
 
-#: ../index.php:337
+#: ../index.php:375
 msgid "Wrong password"
 msgstr "Fout passwoord"
 
-#: ../index.php:347
+#: ../index.php:385
 msgid "Old password"
 msgstr "Oud passwoord"
 
-#: ../index.php:433
+#: ../index.php:468
 msgid "Hi"
 msgstr "Hallo"
 
-#: ../index.php:434
-msgid "Log out"
+#: ../index.php:471
+msgid "Sign out"
 msgstr "Uitloggen"
 
-#: ../index.php:437
-msgid "Register"
-msgstr "Registreren"
+#: ../index.php:475
+msgid "Sign in"
+msgstr "Aanmelden"
 
-#: ../index.php:474
+#: ../index.php:549
+msgid "This field is required"
+msgstr "Dit is een verplicht veld"
+
+#: ../index.php:550
+msgid "Please enter a valid email address"
+msgstr "Voer een geldig e-mailadres in"
+
+#: ../index.php:555
 msgid "Checking email address"
 msgstr "Email verificatie"
 
-#: ../index.php:475
+#: ../index.php:556
 msgid "Sending user info, please wait..."
 msgstr "Verzenden van gebruikersinformatie, even geduld ..."
 
-#: ../index.php:476
+#: ../index.php:557
 msgid "Login successful, redirecting..."
 msgstr "Login gelukt redirectie..."
 
-#: ../index.php:477
+#: ../index.php:558
 msgid "Wrong username or password."
 msgstr "Verkeerde gebruikersnaam of wachtwoord."
 
-#: ../index.php:478
+#: ../index.php:559
 msgid "This username is already taken."
 msgstr "Deze gebruikersnaam wordt al gebruikt."
+
+#: ../index.php:624
+msgid "Bootstrapped Login settings"
+msgstr "Bootstrapped Login settings"
+
+#: ../index.php:650
+msgid "Save Changes"
+msgstr "Wijzigingen Opslaan"
+
+#~ msgid "Log out"
+#~ msgstr "Uitloggen"
 
 #~ msgid "Thanks, your message has been sent."
 #~ msgstr "Merci, votre message a été envoyé."

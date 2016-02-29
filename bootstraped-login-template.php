@@ -21,8 +21,8 @@
             </div>
           </form>
           <form id="signupform" action="" method="post"> 
-            <?php if(get_option('bootstrapped-login-fb')) : ?>
-            <a class="btn btn-default btn-fb fb_login btn-lg" href="#"><?php _e('Register with facebook','bootstrapped-login');?></a>
+            <?php if(function_exists('facebooklogin_button')) : ?>
+            <?php facebooklogin_button() ?>
             <p><?php _e('or','bootstrapped-login')?></p>
             <?php else: ?>
             <h4><?php _e('Register','bootstrapped-login');?></h4>
@@ -58,15 +58,15 @@
             </div>
           </form>
          <form id="loginform"  method="post">
-            <?php if(get_option('bootstrapped-login-fb')) : ?>
-            <a class="btn btn-default btn-fb fb_login btn-lg" href="#"><?php _e('Login with facebook','bootstrapped-login');?></a>
+            <?php if(function_exists('facebooklogin_button')) : ?>
+            <?php facebooklogin_button() ?>
             <p><?php _e('or','bootstrapped-login')?></p>
             <?php else: ?>
             <h4><?php _e('Login','bootstrapped-login');?></h4>
             <?php endif ?>
               
           <div class="form-group">
-            <div id="loginstatus"></div>
+            <div class="loginstatus"></div>
           <div >
           <input type="text" name="username" id="username" placeholder="<?php _e('Email or username','bootstrapped-login'); ?>" class="form-control" />
           </div>

@@ -1,37 +1,43 @@
 jQuery(function($) {
         var msgs = {
-          error:ajaxlogin.login_error, 
+          error:ajaxlogin.login_error,
           success:ajaxlogin.login_successfull
         }
         var redirect = null;
-        $('form#loginform').on('submit', function(e){
-              $('#loginform input[type="submit"]').attr('disabled','disabled');
-              $('#loginstatus').show().text(ajaxlogin.sending_info).attr( "class", "alert alert-info" );
+		console.log($('form#loginform'));
+        $('form#loginform').submit(function(e){
+		console.log($('submit'));
+              var submits = $(this).find('input[type="submit"]')
+              var loginstatus = $(this).find('.loginstatus');
+              loginstatus.show().text(ajaxlogin.sending_info).attr( "class", "alert alert-info" );
+              submits.attr('disabled','disabled');
+
+              var nonce = $('#ajaxloginref').val();
               $.ajax({
                   type: 'POST',
                   dataType: 'json',
                   url: ajaxlogin.ajaxurl,
-                  data: { 
-                      'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
-                      'username': $('form#loginform #username').val(), 
-                      'password': $('form#loginform #password').val(), 
-                      'security': $('form#loginform #security').val() },
+                  data: {
+                      'action': 'ajaxlogin', 
+                      'username': $(this).find('input[name="username"]').val(),
+                      'password': $(this).find('input[name="password"]').val(),
+                      'nonce': ajaxlogin.login_nonce },
                   success: function(data){
-                      $('#loginstatus').show().text(msgs[data.message]);
-                      if (data.loggedin == true){
-                          if( redirect ) window.location = redirect;
-                          else window.location.reload();
-                          $('#loginstatus').attr( "class", "alert alert-success" );
-                      }else{
-                        $('#loginstatus').attr( "class", "alert alert-danger" );
-                        $('#loginform input[type="submit"]').removeAttr('disabled');
-                      }
+                    loginstatus.show().text(msgs[data.message]);
+                    if (data.loggedin == true){
+                        if( redirect ) window.location = redirect;
+                        else window.location.reload();
+                        loginstatus.attr( "class", "alert alert-success" );
+                    }else{
+                      loginstatus.attr( "class", "alert alert-danger" );
+                      submits.removeAttr('disabled');
+                    }
                   }
               });
-            
+
             e.preventDefault();
         });
-        
+
 
         $('form#signupform').on('submit', function(e){
             if($("#signupform").valid()){
@@ -41,11 +47,11 @@ jQuery(function($) {
                   type: 'POST',
                   dataType: 'json',
                   url: ajaxlogin.ajaxurl,
-                  data: { 
-                      'action': 'ajaxregister', 
+                  data: {
+                      'action': 'ajaxregister',
                       'username': $('form#signupform .username').val(),
-                      'email': $('form#signupform .email').val(), 
-                      'password': $('form#signupform .password').val(), 
+                      'email': $('form#signupform .email').val(),
+                      'password': $('form#signupform .password').val(),
                       'security-signup': $('form#signupform #security-signup').val() },
                   success: function(data){
                       $('#signupstatus').text(data.info);
@@ -61,7 +67,7 @@ jQuery(function($) {
             }
             e.preventDefault();
         });
-        
+
         $("#lostpasswordform").on('submit', function(e){
           if($("#lostpasswordform").valid()){
             $('#lostpasswordform input[type="submit"]').attr('disabled','disabled');
@@ -72,7 +78,9 @@ jQuery(function($) {
               data: {
                 'action': 'ajaxlostpassword',
                 'email':$("#lostpasswordform .email").val(),
-                'security-pwd': $('form#lostpasswordform #security-pwd').val() },
+                'security-pwd': $('form#lostpasswordform #security-pwd').val(),
+                'lang': ajaxlogin.lang},
+
               success: function(data){
                 $('#passstatus').html(data);
                 $('#lostpasswordform input[type="submit"]').removeAttr('disabled');
@@ -119,8 +127,8 @@ jQuery(function($) {
                 left: ($(window).width() - $el.width()) / 2,
                 top: (($(window).height() - $el.height()) / 2)-30
             });
-          } 
-          
+          }
+
 
           $('#login_modal form').hide();
           var $el = $('#login_modal #'+div).fadeIn();
@@ -131,7 +139,7 @@ jQuery(function($) {
           $('#login_modal').hide();
            e.preventDefault();
         })
-        
+
 
         $('#login_modal').click(function(e){
           if($(e.target).parents('.modal-dialog').length == 0) {
@@ -159,9 +167,9 @@ jQuery(function($) {
       });
       if($.validator.messages){
         $.extend($.validator.messages, {
-              required: ajaxlogin.validate_required, 
-              email: ajaxlogin.validate_email, 
-              equalTo: ajaxlogin.validate_equalTo, 
+              required: ajaxlogin.validate_required,
+              email: ajaxlogin.validate_email,
+              equalTo: ajaxlogin.validate_equalTo,
               minlength: $.validator.format(ajaxlogin.validate_minlength),
               remote : ajaxlogin.validate_username,
               alphanumeric : ajaxlogin.validate_alphanumeric
@@ -170,18 +178,10 @@ jQuery(function($) {
       }
 
 
-$('.fb_login').click(function(e){
- window.location.href = ajaxlogin.fbloginurl;
- e.preventDefault();
-})
+      $('.fb_login').click(function(e){
+        window.location.href = ajaxlogin.fbloginurl;
+        e.preventDefault();
+      })
 
 
-
-
-
-
-
-      });
-
-
-
+});
